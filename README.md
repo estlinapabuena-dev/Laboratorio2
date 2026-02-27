@@ -33,8 +33,9 @@ Se generaron las representaciones gráficas y secuenciales de las señales origi
 
 ### 3. Verificación Computacional con Python
 
-Para validar los resultados manuales, se implementó el cálculo de la convolución en Python. Se utilizó la librería **NumPy** para manipular las señales como arreglos y verificar la precisión del cálculo.ñ
+Para validar los resultados manuales, se implementó el cálculo de la convolución en Python. Se utilizó la librería **NumPy** para manipular las señales como arreglos y verificar la precisión del cálculo.
 
+<pre>
 # Datos de Lina
 x = np.array([1,0,1,1,0,8,2,1,5,0])   # cédula
 h = np.array([5,6,0,0,8,2,2])         # código estudiantil
@@ -74,6 +75,7 @@ plt.title('Convolución y[n] = x[n] * h[n]')
 plt.grid()
 plt.show()
 </pre> 
+
 ## Gráfica Código Estudiantil Lina
 <img width="678" height="393" alt="Grafica Codigo estudiantil Lina" src="https://github.com/user-attachments/assets/6fbecc7b-b591-4250-8839-b40a92d5a6e7" />
 
@@ -83,3 +85,9 @@ plt.show()
 ## Gráfica Convolución Lina
 <img width="850" height="394" alt="convolución Lina" src="https://github.com/user-attachments/assets/fbcbcc0f-cf23-4089-8a8a-2a91edeaf5a6" />
 
+
+## PARTE B
+
+##  Resumen
+
+Esta sección del laboratorio se centra en la aplicación de la **correlación cruzada** entre dos señales discretas, **$x[n]$** y **$h[n]$**. El objetivo es determinar la similitud entre ambas señales en función de un desplazamiento temporal. El proceso incluye el cálculo, la representación gráfica del resultado y una discusión sobre la utilidad de esta técnica en el procesamiento digital de señales.
