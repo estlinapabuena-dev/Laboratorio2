@@ -89,5 +89,60 @@ plt.show()
 ## PARTE B
 
 ##  Resumen
+Esta sección del laboratorio se centra en la aplicación de la correlación cruzada entre dos señales discretas, **x₁[nTs]** y **x₂[nTs]**, con el fin de medir su similitud en función de un desplazamiento temporal. El objetivo es determinar la similitud entre ambas señales en función de un desplazamiento temporal. El proceso incluye el cálculo, la representación gráfica del resultado y una discusión sobre la utilidad de esta técnica en el procesamiento digital de señales.
 
-Esta sección del laboratorio se centra en la aplicación de la **correlación cruzada** entre dos señales discretas, **$x[n]$** y **$h[n]$**. El objetivo es determinar la similitud entre ambas señales en función de un desplazamiento temporal. El proceso incluye el cálculo, la representación gráfica del resultado y una discusión sobre la utilidad de esta técnica en el procesamiento digital de señales.
+### 1. Definición de Señales
+- Señal Cosenoidal
+  x1[nTs] = cos(2π * 100 * nTs) = cos(n * π/4)  
+- Señal Senoidal
+  x2[nTs] = sin(2π * 100 * nTs) = sin(n * π/4)
+
+### 2. Correlación Cruzada
+<img width="689" height="393" alt="image" src="https://github.com/user-attachments/assets/8250ec23-9857-4f87-b1a8-dd81d334ff54" />
+
+## Código en Python
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parámetros
+Ts = 1.25e-3   # periodo de muestreo
+n = np.arange(9)  # muestras 0 <= n <= 8
+f = 100        # frecuencia 100 Hz
+
+# Señales discretas
+x1 = np.cos(2 * np.pi * f * n * Ts)   # x1[n] = cos(2π·100·n·Ts)
+x2 = np.sin(2 * np.pi * f * n * Ts)   # x2[n] = sin(2π·100·n·Ts)
+
+# Correlación cruzada
+correlacion = np.correlate(x1, x2, mode='full')
+print("Correlación cruzada (vector resultado):")
+print(correlacion)
+
+# Eje de desplazamientos (lags)
+t_corr = np.arange(-len(n) + 1, len(n))
+
+# Gráfica de la correlación cruzada
+plt.figure(figsize=(8, 4))
+plt.stem(t_corr, correlacion)
+plt.axhline(0, color="red")  # línea en y=0 para referencia
+plt.xlabel("Desplazamiento")
+plt.ylabel("Correlación")
+plt.title("Correlación cruzada entre x1[n] y x2[n]")
+plt.grid()
+plt.show()
+
+## 2. Resultados de Colab
+
+Vector de correlación cruzada (`mode='full'`):
+
+```
+[-2.44929360e-16 -7.07106781e-01 -1.50000000e+00 -1.41421356e+00
+ -2.54671001e-16  2.12132034e+00  3.50000000e+00  2.82842712e+00
+ -2.28847549e-17 -2.82842712e+00 -3.50000000e+00 -2.12132034e+00
+  4.55531587e-16  1.41421356e+00  1.50000000e+00  7.07106781e-01
+  0.00000000e+00]
+
+La gráfica muestra los valores de correlación cruzada en el rango de desplazamientos `m = -8 … 8`.
+
