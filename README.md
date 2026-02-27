@@ -163,3 +163,13 @@ y el coseno, lo que implica una baja correlación cuando ambas señales están a
 A medida que el desplazamiento aumenta en sentido positivo o negativo, la correlación
 disminuye debido a la desalineación progresiva de las señales.
 
+### 4 ¿En qué situaciones resulta útil aplicar la correlación cruzada en el procesamiento digital de señales?
+La correlación cruzada es útil en múltiples contextos de procesamiento digital de señales, como:
+**Estimación de retardo/desfase** → sincronización de señales, localización de fuentes (radar, sonar, acústica).  
+**Detección de patrones o plantillas** (*matched filtering*), útil para encontrar secuencias conocidas en ruido.  
+**Comunicaciones digitales** → sincronización de símbolos, detección de preámbulos o códigos de inicio.  
+**Señales biomédicas** → análisis de retardo entre ECG y PPG, o entre distintos sensores.  
+**Procesamiento de imágenes** → registro y alineación de imágenes desplazadas.  
+**Control de calidad** → comparación de señales de vibración o fallas con patrones de referencia.
+
+
