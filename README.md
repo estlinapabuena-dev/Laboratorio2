@@ -146,3 +146,20 @@ Vector de correlación cruzada (`mode='full'`):
 
 La gráfica muestra los valores de correlación cruzada en el rango de desplazamientos `m = -8 … 8`.
 
+## 3 Análisis
+El análisis de la correlación cruzada muestra que los valores de Ts y f determinan
+directamente el argumento de las funciones seno y coseno, estableciendo una relación
+de fase constante entre ambas señales. El eje horizontal de la gráfica representa los
+desplazamientos temporales entre −8 y 8 muestras, mientras que el eje vertical indica
+la magnitud de la correlación cruzada.
+
+La gráfica presenta una simetría aproximada alrededor del origen, característica de la
+correlación entre señales periódicas de igual frecuencia con un desfase constante.
+Se observan picos máximos cercanos a 3.5, los cuales indican los desplazamientos donde
+la similitud entre ambas señales es mayor.
+
+El valor cercano a cero en el desplazamiento n = 0 refleja la ortogonalidad entre el seno
+y el coseno, lo que implica una baja correlación cuando ambas señales están alineadas.
+A medida que el desplazamiento aumenta en sentido positivo o negativo, la correlación
+disminuye debido a la desalineación progresiva de las señales.
+
