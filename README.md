@@ -87,6 +87,60 @@ plt.show()
 
 
 ## PARTE B
+- **Señal $y[n]$**: Ralf
+- ![IMG_0657](https://github.com/user-attachments/assets/4189eba4-28f0-4088-965f-7400c9dd9ca3)
+
+### 2. Representación Gráfica y Secuencial
+
+Se generaron las representaciones gráficas y secuenciales de las señales originales ($x[n]$, $h[n]$) y de la señal resultante ($y[n]$). Este paso se realizó a mano para visualizar el desplazamiento y la superposición de las señales.
+
+- **Gráfica señal $y[n]$**: Ralf
+- ![IMG_0658](https://github.com/user-attachments/assets/8fc28142-b36a-4f14-889c-d45bf0c4ca1c)
+
+### 3. Verificación Computacional con Python
+
+Para validar los resultados manuales, se implementó el cálculo de la convolución en Python. Se utilizó la librería **NumPy** para manipular las señales como arreglos y verificar la precisión del cálculo.
+
+<pre>
+# Datos de Ralf
+x = np.array([1,0,1,9,9,8,6,0,3,6])   # cédula
+h = np.array([5,6,0,0,8,3,3])         # código estudiantil
+
+# Gráfica de h[n]
+t = np.arange(len(h))
+plt.figure(figsize=(8, 4))
+plt.stem(t, h)
+plt.xlabel('n')
+plt.ylabel('h[n]')
+plt.title('h[n] Ralf')
+plt.grid()
+plt.show()
+
+# Gráfica de x[n]
+t = np.arange(len(x))
+plt.figure(figsize=(8, 4))
+plt.stem(t, x)
+plt.xlabel('n')
+plt.ylabel('x[n]')
+plt.title('x[n] Ralf')
+plt.grid()
+plt.show()
+
+# Convolución
+y = np.convolve(x, h, mode='full')
+print("Señal convolución entre h[n] y x[n], Ralf:")
+print(y)
+
+# Gráfica de y[n]
+t = np.arange(len(y))
+plt.figure(figsize=(10, 4))
+plt.stem(t, y)
+plt.xlabel('n')
+plt.ylabel('y[n]')
+plt.title('Convolución y[n] = x[n] * h[n]')
+plt.grid()
+plt.show()
+</pre> 
 
 ##  Resumen
 Esta sección del laboratorio se centra en la aplicación de la correlación cruzada entre dos señales discretas, **x₁[nTs]** y **x₂[nTs]**, con el fin de medir su similitud en función de un desplazamiento temporal. El objetivo es determinar la similitud entre ambas señales en función de un desplazamiento temporal. El proceso incluye el cálculo, la representación gráfica del resultado y una discusión sobre la utilidad de esta técnica en el procesamiento digital de señales.
