@@ -102,9 +102,12 @@ Se generaron las representaciones gráficas y secuenciales de las señales origi
 Para validar los resultados manuales, se implementó el cálculo de la convolución en Python. Se utilizó la librería **NumPy** para manipular las señales como arreglos y verificar la precisión del cálculo.
 
 <pre>
+import numpy as np
+import matplotlib.pyplot as plt
+
 # Datos de Ralf
-x = np.array([1,0,1,9,9,8,6,0,3,6])   # cédula
-h = np.array([5,6,0,0,8,3,3])         # código estudiantil
+x = np.array([1,0,1,9,9,8,6,0,3,6]) # cédula
+h = np.array([5,6,0,0,8,3,3]) # código estudiantil
 
 # Gráfica de h[n]
 t = np.arange(len(h))
@@ -140,8 +143,17 @@ plt.ylabel('y[n]')
 plt.title('Convolución y[n] = x[n] * h[n]')
 plt.grid()
 plt.show()
-</pre> 
 
+ ## Gráfica Código Estudiantil Ralf
+ <img width="678" height="389" alt="image" src="https://github.com/user-attachments/assets/871d1072-e41a-4cf2-a9b7-5b6d934db849" />
+
+ ## Gráfica Cédula Ralf 
+<img width="665" height="366" alt="image" src="https://github.com/user-attachments/assets/fa472a43-7f81-400c-a429-464b3b33d7ce" />
+
+## Gráfica Convolución Ralf
+<img width="845" height="380" alt="image" src="https://github.com/user-attachments/assets/d4dd8fb8-1913-445d-b6f3-06343f943920" />
+
+ 
 ##  Resumen
 Esta sección del laboratorio se centra en la aplicación de la correlación cruzada entre dos señales discretas, **x₁[nTs]** y **x₂[nTs]**, con el fin de medir su similitud en función de un desplazamiento temporal. El objetivo es determinar la similitud entre ambas señales en función de un desplazamiento temporal. El proceso incluye el cálculo, la representación gráfica del resultado y una discusión sobre la utilidad de esta técnica en el procesamiento digital de señales.
 
